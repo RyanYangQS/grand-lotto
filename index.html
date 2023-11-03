@@ -28,7 +28,7 @@
     .container{
       width: 650px;
       height: 400px;
-      background-image: url(https://i2.hdslb.com/bfs/archive/51ce2e09e6d25ea10a31ca99f8d14c6c5ad2f3c7.jpg);
+      background-image: url(./images/b.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       padding: 20px;
@@ -87,6 +87,29 @@
       border-radius: 4px;
       color:#999;
       font-size: 18px;
+    }
+
+    .divDuoLa {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      transform: translate(-30%, -30%);
+    }
+
+    .bounce {
+      animation: rotate 3s infinite linear;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
