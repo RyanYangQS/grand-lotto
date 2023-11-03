@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>多啦A梦🉐️盒子</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh);
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .topTitle{
+      color:#4C9EDA;
+    }
+    .inputLabel{
+      color:coral;
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .container{
+      width: 650px;
+      height: 400px;
+      background-image: url(https://i2.hdslb.com/bfs/archive/51ce2e09e6d25ea10a31ca99f8d14c6c5ad2f3c7.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0px 6px 58px 0px rgba(209,213,219,0.66);
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .title{
+      color:#4C9EDA;
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .result {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .front-numbers {
+      background-color: #ececec;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .last-numbers {
+      background-color: #ececec;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .daletou{
+      width:90px;
+      background-color: #fff;
+      border-radius: 4px;
+      color:#999;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="topTitle">哆啦A梦大神 包你中奖！ (ps: 主打一个心诚则灵) <button class="daletou" onclick="generate()">求签</button></h1>
+  <div class="container">
+    <h1 class="title"></h1>
+    <div class="result">
+      <p class="inputLabel">前区：</p>
+      <ul class="front-numbers"></ul>
+      <p class="inputLabel">后区：</p>
+      <ul class="last-numbers"></ul>
+    </div>
+  </div>
+  <script>
+    function generate() {
+      // 生成前5个数
+      const frontNumbers = Array(5).fill(null);
+      for (let i = 0; i < 5; i++) {
+        frontNumbers[i] = Math.floor(Math.random() * 35) + 1;
+      }
+
+      // 生成后2个数
+      const lastNumbers = Array(2).fill(null);
+      for (let i = 0; i < 2; i++) {
+        lastNumbers[i] = Math.floor(Math.random() * 12) + 1;
+      }
+
+      // 更新页面
+      document.querySelector(".front-numbers").innerHTML =
+        frontNumbers.join(", ");
+      document.querySelector(".last-numbers").innerHTML =
+        lastNumbers.join(", ");
+    }
+
+    generate();
+  </script>
+</body>
+</html>
